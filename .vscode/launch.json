@@ -5,22 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "npm start",
-            "name": "Run npm start",
+            "type": "node-terminal",
+            "name": "Run Script: start",
             "request": "launch",
-            "type": "node-terminal"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/src/index.ts",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+            "command": "npm run start",
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
