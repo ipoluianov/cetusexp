@@ -11,7 +11,7 @@ async function tohex(bs : Uint8Array) {
 }
 
 const POOL_ID = "0xe01243f37f712ef87e556afb9b1d03d0fae13f96d324ec912daffc339dfdcbd2"
-const POS_ID = "0x2bbc512dbd34d27d17f69ef3897a43583784dedd46d37f47d755fb6ea8615c2b"
+const POS_ID = "0x872e7f86660e926c255adde63db01c64021183b60f3469e114a985b232844f22"
 //const POS_ID = "0x8d117d05348291a0d0c7e42bf9ccaf0dfcaa40c2a3f31b477d92734a9653e633"
 
 
@@ -73,7 +73,7 @@ async function process() {
         let fs = require('fs');
         fs.writeFileSync('totalYield.txt', totalYield.toFixed(4));
 
-        await new Promise(r => setTimeout(r, 10000));
+        await new Promise(r => setTimeout(r, 3000));
     }
 
     //console.log("STOPPED1");
