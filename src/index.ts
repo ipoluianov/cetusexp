@@ -44,7 +44,7 @@ async function process() {
     //console.log("coinTypeA", pool.coinTypeA)
     //console.log("coinTypeB", pool.coinTypeB)
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 1000000; i++) {
         const posRewardersAmount = await sdk.Rewarder.batchFetchPositionRewarders([POS_ID])
         const fees = await sdk.Position.batchFetchPositionFees([POS_ID])
 
