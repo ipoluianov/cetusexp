@@ -17,12 +17,12 @@ const POS_ID = "0xa8847ecc7dd5652256a542b8b68f2d76e6ccde1a7dbda63f970fc3289fe8af
 
 function toDollars(coinName : string, amount : number) : number {
     if (coinName.indexOf("::SUI") != -1) {
-        let sui = amount / 1000000000 * 4.00;
+        let sui = amount / 1000000000 * 3.5;
         return sui;
     }
 
     if (coinName.indexOf("::DEEP") != -1) {
-        let deep = amount / 1000000 * 0.26;
+        let deep = amount / 1000000 * 0.22;
         return deep;
     }
 
