@@ -11,7 +11,7 @@ async function tohex(bs : Uint8Array) {
 }
 
 const POOL_ID = "0xe01243f37f712ef87e556afb9b1d03d0fae13f96d324ec912daffc339dfdcbd2"
-const POS_ID = "0x0f66cff8fa731c96dd19c0777a23eca28737433ecad352e4ba3ee5ec990b893d"
+const POS_ID = "0xe01243f37f712ef87e556afb9b1d03d0fae13f96d324ec912daffc339dfdcbd2"
 //const POS_ID = "0x8d117d05348291a0d0c7e42bf9ccaf0dfcaa40c2a3f31b477d92734a9653e633"
 
 
