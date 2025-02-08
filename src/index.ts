@@ -10,8 +10,10 @@ async function tohex(bs : Uint8Array) {
     return Array.prototype.map.call(bs, x => ('00' + x.toString(16)).slice(-2)).join('');
 }
 
+// 2025-02-01 00:00:00.123
+// 4+2+2+2+2+2+3 = 17 
 const POOL_ID = "0xe01243f37f712ef87e556afb9b1d03d0fae13f96d324ec912daffc339dfdcbd2"
-const POS_ID = "0xfabeac8cfec7dd04d2e3719b458b7a72bc71862ff27ab7bc596ab91fcb540c41"
+const POS_ID = "0xf27e268813157ec6cc19873cd4a0de447cd0b7912f72a4197a9560c9c1c59c65"
 //const POS_ID = "0x8d117d05348291a0d0c7e42bf9ccaf0dfcaa40c2a3f31b477d92734a9653e633"
 
 
