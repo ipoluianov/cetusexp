@@ -24,7 +24,7 @@ function toDollars(coinName : string, amount : number) : number {
     }
 
     if (coinName.indexOf("::DEEP") != -1) {
-        let deep = amount / 1000000 * 0.22;
+        let deep = amount / 1000000 * 0.18;
         return deep;
     }
 
