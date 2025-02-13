@@ -13,7 +13,7 @@ async function tohex(bs : Uint8Array) {
 // 2025-02-01 00:00:00.123
 // 4+2+2+2+2+2+3 = 17 
 const POOL_ID = "0xe01243f37f712ef87e556afb9b1d03d0fae13f96d324ec912daffc339dfdcbd2"
-const POS_ID = "0xa77f72e10e1b2154722a3997409541df269125457ffa25696f6581fcaa8e23b1"
+const POS_ID = "0xdd3b8a9759e049eed8d0547fc005547c9a7f48f0270741e32c4e36ea0b043312"
 //const POS_ID = "0x8d117d05348291a0d0c7e42bf9ccaf0dfcaa40c2a3f31b477d92734a9653e633"
 
 
