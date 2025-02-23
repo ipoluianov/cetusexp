@@ -1,6 +1,7 @@
 import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
 import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
 import { Transaction } from '@mysten/sui/transactions';
+import { TickMath } from '@cetusprotocol/cetus-sui-clmm-sdk'
 
 import CetusClmmSDK, { adjustForSlippage, d, initCetusSDK, Percentage, printTransaction, RewarderAmountOwed } from '@cetusprotocol/cetus-sui-clmm-sdk'
 import { DEV_ADDR, POOL_DEEP_SUI } from './config';
@@ -38,7 +39,6 @@ async function process() {
     const sdk = initCetusSDK({ network, fullNodeUrl, simulationAccount })
     sdk.senderAddress = DEV_ADDR;
 
-    const pool = await sdk.Pool.getPool(POOL_ID)
 
     while (true) {
         console.log('get positions of one pool by owner address');
@@ -60,11 +60,20 @@ async function process() {
         //console.log("coinTypeA", pool.coinTypeA)
         //console.log("coinTypeB", pool.coinTypeB)
 
-        try {
+        const calcPrice = (tick: number, dec0:number, dec1:number) => {
+            //return MathUtil.fromX64(sqrtPriceX64).pow(2).mul(decimal_default.pow(10, decimalsA - decimalsB));
+            return TickMath.sqrtPriceX64ToPrice(TickMath.tickIndexToSqrtPriceX64(tick), dec0, dec1);
+        };
 
+        try {
             for (let i = 0; i < 1000000; i++) {
                 const posRewardersAmount = await sdk.Rewarder.batchFetchPositionRewarders([posObjectId])
                 const fees = await sdk.Position.batchFetchPositionFees([posObjectId])
+
+                const pool = await sdk.Pool.getPool(POOL_ID)
+                //const price = TickMath.tickIndexToPrice(pool.current_tick_index, 6, 9);
+                const price = calcPrice(pool.current_tick_index, 6, 9);
+                console.log("price", price.toString());
 
                 //console.log("posRewardersAmount", JSON.stringify(posRewardersAmount, null, 2))
                 //console.log("fees", JSON.stringify(fees, null, 2))
